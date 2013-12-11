@@ -28,7 +28,7 @@
 #include "SchemaSettings.h"
 
 #include "Log.h"
-#include "Utiles.h"
+#include "Utils.h"
 
 namespace appSet
 {

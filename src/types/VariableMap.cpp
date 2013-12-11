@@ -85,7 +85,7 @@ void VariableMap::set_value(const std::string &key, const int &v)
 
 	if(!check.second)
 	{
-		drivIn::Log::print_log("Unable to add the map ", 4, 3);
+		sysUtil::Log::print_log("Unable to add the map ", 4, 3);
 	}
 }
 
@@ -105,7 +105,7 @@ void VariableMap::set_value(const std::string &key, const double &v)
 
 	if(!check.second)
 	{
-		drivIn::Log::print_log("Unable to add the map ", 4, 3);
+		sysUtil::Log::print_log("Unable to add the map ", 4, 3);
 	}
 }
 
@@ -126,7 +126,7 @@ void VariableMap::set_value(const std::string &key, const std::string &v)
 
 	if(!check.second)
 	{
-		drivIn::Log::print_log("Unable to add the map ", 4, 3);
+		sysUtil::Log::print_log("Unable to add the map ", 4, 3);
 	}
 }
 
@@ -204,7 +204,7 @@ VariableBase * VariableMap::operator[](const std::string &key)
 	}
 	else
 	{
-		drivIn::Log::print_log("Key not found", 4, 3);
+		sysUtil::Log::print_log("Key not found", 4, 3);
 
 		return 0;
 	}

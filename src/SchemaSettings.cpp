@@ -56,10 +56,10 @@ void SchemaSettings::print_settings_values()
 	std::map<std::string, VariableBase *>::iterator iter;
 
 	std::cout<<std::endl;
-	drivIn::Log::print_log("***************INICIO FICHERO CONFIGURACION***************", 4, 7);
+	sysUtil::Log::print_log("***************INICIO FICHERO CONFIGURACION***************", 4, 7);
 	std::cout<<std::endl;
 
-	drivIn::Log::print_log("Preferencias id: " + this->id_schema, 4, 7);
+	sysUtil::Log::print_log("Preferencias id: " + this->id_schema, 4, 7);
 
 	for(iter = settings_table.begin(); iter != settings_table.end(); ++iter)
 	{
@@ -67,11 +67,11 @@ void SchemaSettings::print_settings_values()
 
 		part_msg = iter->second->get_msg_string_values(iter->first);
 
-		drivIn::Log::print_log(part_msg, 4, 7);
+		sysUtil::Log::print_log(part_msg, 4, 7);
 	}
 
 	std::cout<<std::endl;
-	drivIn::Log::print_log("***************FIN FICHERO CONFIGURACION***************", 4, 7);
+	sysUtil::Log::print_log("***************FIN FICHERO CONFIGURACION***************", 4, 7);
 	std::cout<<std::endl;
 }
 
@@ -97,7 +97,7 @@ void SchemaSettings::set_value(const std::string &key, const std::string &value)
 
 	if(!check.second)
 	{
-		drivIn::Log::print_log("Unable to add the element " + value, 4, 3);
+		sysUtil::Log::print_log("Unable to add the element " + value, 4, 3);
 	}
 }
 
@@ -123,7 +123,7 @@ void SchemaSettings::set_value(const std::string &key, const std::vector<std::st
 
 	if(!check.second)
 	{
-		drivIn::Log::print_log("Unable to add the vector ", 4, 3);
+		sysUtil::Log::print_log("Unable to add the vector ", 4, 3);
 	}
 }
 
@@ -148,7 +148,7 @@ void SchemaSettings::set_value(const std::string &key, std::map<std::string, std
 
 	if(!check.second)
 	{
-		drivIn::Log::print_log("Unable to add the map ", 4, 3);
+		sysUtil::Log::print_log("Unable to add the map ", 4, 3);
 	}
 }
 

@@ -27,6 +27,7 @@
 #include <iostream>
 
 #include "Log.h"
+#include "Utils.h"
 #include "EWrongValue.h"
 
 namespace appSet

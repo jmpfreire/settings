@@ -141,7 +141,7 @@ VariableBase * VariableVector::operator[](const int &index)
 	}
 	else
 	{
-		drivIn::Log::print_log("Index out of limits", 4, 3);
+		sysUtil::Log::print_log("Index out of limits", 4, 3);
 		return 0;
 	}
 }

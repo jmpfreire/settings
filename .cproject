@@ -9,7 +9,7 @@
 					<externalSetting>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/Settings"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/Settings/Debug"/>
-						<entry flags="RESOLVED" kind="libraryFile" name="Settings"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="Settings" srcPrefixMapping="" srcRootPath=""/>
 					</externalSetting>
 				</externalSettings>
 				<extensions>
@@ -35,7 +35,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/include/glib-2.0}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/include/glibmm-2.4}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/include/libxml++-2.6}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/DriverInnoamb/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/include/SystemUtilities}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.2055316036" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
@@ -65,7 +65,7 @@
 					<externalSetting>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/Settings"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/Settings/Release"/>
-						<entry flags="RESOLVED" kind="libraryFile" name="Settings"/>
+						<entry flags="RESOLVED" kind="libraryFile" name="Settings" srcPrefixMapping="" srcRootPath=""/>
 					</externalSetting>
 				</externalSettings>
 				<extensions>
@@ -91,7 +91,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/include/glib-2.0}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/include/glibmm-2.4}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/include/libxml++-2.6}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/DriverInnoamb/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/include/SystemUtilities}&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1064727458" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
@@ -142,4 +142,5 @@
 			<path value=""/>
 		</doc-comment-owner>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 </cproject>

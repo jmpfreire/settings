@@ -70,7 +70,7 @@ void XmlParser::on_start_element(const Glib::ustring& name_xml,const AttributeLi
 			}
 			catch(...)
 			{
-				drivIn::Log::print_log("XmlParse attributes, Exception while obtaining name or value", 7, 4);
+				sysUtil::Log::print_log("XmlParse attributes, Exception while obtaining name or value", 7, 4);
 			}
 		}
 	}
@@ -86,7 +86,7 @@ void XmlParser::on_start_element(const Glib::ustring& name_xml,const AttributeLi
 			}
 			catch(...)
 			{
-				drivIn::Log::print_log("XmlParse attributes, Exception while obtaining name or value", 7, 4);
+				sysUtil::Log::print_log("XmlParse attributes, Exception while obtaining name or value", 7, 4);
 			}
 		}
 	}

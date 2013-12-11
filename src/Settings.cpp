@@ -38,7 +38,7 @@ Settings::Settings(const std::string &pp): pref_file_path(pp)
 {
 	if(!this->load_settings_file(pref_file_path))
 	{
-		drivIn::Log::print_log("Unable to open settings files " + pref_file_path, 4, 3);
+		sysUtil::Log::print_log("Unable to open settings files " + pref_file_path, 4, 3);
 	}
 }
 
@@ -119,7 +119,7 @@ bool Settings::load_settings_file(const std::string &path)
 	}
 	catch(const xmlpp::exception& ex)
 	{
-		drivIn::Log::print_log("Exception libxml " + drivIn::Utiles::convertCharToString(ex.what()), 4, 4);
+		sysUtil::Log::print_log("Exception libxml " + sysUtil::Utils::convertCharToString(ex.what()), 4, 4);
 
 		return false;
 	}

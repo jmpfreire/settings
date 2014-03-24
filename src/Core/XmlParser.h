@@ -29,7 +29,7 @@
 #include <map>
 
 #include "SchemaSettings.h"
-#include "Log.h"
+#include "../Utilities/Log.h"
 
 /**
  *  \addtogroup appSet

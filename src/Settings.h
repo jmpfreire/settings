@@ -24,11 +24,7 @@
 #include <string>
 #include <map>
 
-#include "XmlParser.h"
-#include "SchemaSettings.h"
-
-#include "Log.h"
-#include "Utils.h"
+#include "SettingsInclude.h"
 
 /**
  *  \addtogroup appSet

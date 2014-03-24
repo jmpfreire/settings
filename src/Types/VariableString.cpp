@@ -7,6 +7,11 @@ VariableString::VariableString(): VariableBase(), value("")
 
 }
 
+VariableString::~VariableString()
+{
+
+}
+
 VariableString * VariableString::clone() const
 {
 	return new VariableString(*this);

@@ -7,6 +7,11 @@ VariableDouble::VariableDouble() :VariableBase(), value(0.0)
 
 }
 
+VariableDouble::~VariableDouble()
+{
+
+}
+
 VariableDouble * VariableDouble::clone() const
 {
 	return new VariableDouble(*this);

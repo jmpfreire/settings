@@ -7,6 +7,11 @@ VariableInt::VariableInt():VariableBase(), value(-1)
 
 }
 
+VariableInt::~VariableInt()
+{
+
+}
+
 VariableInt * VariableInt::clone() const
 {
 	return new VariableInt(*this);

@@ -2,6 +2,11 @@
 
 namespace appSet {
 
+VariableBase::~VariableBase()
+{
+
+}
+
 int VariableBase::get_value_int() const
 {
 	throw EWrongValue("Wrong class the object do not have integer value");

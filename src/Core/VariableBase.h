@@ -27,9 +27,9 @@
 #include <iostream>
 #include <memory>
 
-#include "Log.h"
-#include "Utils.h"
-#include "EWrongValue.h"
+#include "../Utilities/Log.h"
+#include "../Utilities/Utils.h"
+#include "../Core/EWrongValue.h"
 
 /**
  *  \addtogroup appSet

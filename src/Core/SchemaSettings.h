@@ -25,14 +25,14 @@
 #include <string>
 #include <iostream>
 
-#include "VariableBase.h"
-#include "VariableString.h"
-#include "VariableInt.h"
-#include "VariableDouble.h"
-#include "VariableVector.h"
-#include "VariableMap.h"
+#include "../Core/VariableBase.h"
+#include "../Types/VariableString.h"
+#include "../Types/VariableInt.h"
+#include "../Types/VariableDouble.h"
+#include "../Types/VariableVector.h"
+#include "../Types/VariableMap.h"
 
-#include "Log.h"
+#include "../Utilities/Log.h"
 
 #include <typeinfo>
 

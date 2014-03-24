@@ -23,7 +23,7 @@
 
 #include <iostream>
 
-#include "VariableBase.h"
+#include "../Core/VariableBase.h"
 
 /**
  *  \addtogroup appSet
@@ -43,6 +43,10 @@ namespace appSet
 			 *
 			 */
 			VariableString();
+			/**
+			 *
+			 */
+			~VariableString();
 			/**
 			 *
 			 * @return

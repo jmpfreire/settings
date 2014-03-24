@@ -21,8 +21,6 @@
  *  along with libSettings.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "VariableBase.h"
-
 #include "VariableInt.h"
 #include "VariableDouble.h"
 #include "VariableString.h"

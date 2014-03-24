@@ -1,0 +1,17 @@
+Xml file configuration
+
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="id process">
+  	<label>"value string"</label>
+  	<label>value numeric</label>
+	<label map type>
+		<label id_value = "key value">value integer</label>
+		<label id_value = "key value">"value string"</label>
+	</label map type>
+	<label vector type>
+		<label>"value string"</label>
+		<label>value numeric</label>
+	</label vector type>
+   </schema>
+</schemalist>

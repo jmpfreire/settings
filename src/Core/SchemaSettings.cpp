@@ -9,6 +9,12 @@ SchemaSettings::SchemaSettings(): id_schema("")
 
 SchemaSettings::~SchemaSettings()
 {
+	for(def_settings::iterator it = settings_table.begin(); it != settings_table.end(); it++)
+	{
+		delete it->second;
+		it->second = nullptr;
+	}
+
 	settings_table.clear();
 }
 
@@ -72,6 +78,9 @@ void SchemaSettings::set_value(const std::string &key, const std::vector<std::st
 	{
 		sysUtil::Log::print_log("Unable to add the vector ", 4, 3);
 	}
+
+	delete new_vec;
+	new_vec = nullptr;
 }
 
 void SchemaSettings::set_value(const std::string &key, std::map<std::string, std::string> value)
@@ -92,6 +101,9 @@ void SchemaSettings::set_value(const std::string &key, std::map<std::string, std
 	{
 		sysUtil::Log::print_log("Unable to add the map ", 4, 3);
 	}
+
+	delete new_map;
+	new_map = nullptr;
 }
 
 VariableBase & SchemaSettings::operator[](const std::string &key)
@@ -99,9 +111,9 @@ VariableBase & SchemaSettings::operator[](const std::string &key)
 	return *settings_table[key];
 }
 
-VariableBase * SchemaSettings::analize_type_data(const std::string &value)
+std::shared_ptr<VariableBase> SchemaSettings::analize_type_data(const std::string &value)
 {
-	VariableBase * new_var;
+	std::shared_ptr<VariableBase> new_var;
 
 	try
 	{
@@ -111,7 +123,8 @@ VariableBase * SchemaSettings::analize_type_data(const std::string &value)
 
 		if(found_double != std::string::npos)
 		{
-			new_var = new VariableDouble;
+			std::unique_ptr<VariableDouble> unique (new VariableDouble);
+			new_var = std::move(unique);
 
 			new_var->set_value(val);
 		}
@@ -119,14 +132,16 @@ VariableBase * SchemaSettings::analize_type_data(const std::string &value)
 		{
 			int val_int = std::stoi(value);
 
-			new_var = new VariableInt;
+			std::unique_ptr<VariableInt> unique(new VariableInt);
+			new_var = std::move(unique);
 
 			new_var->set_value(val_int);
 		}
 	}
 	catch(...)
 	{
-		new_var = new VariableString;
+		std::unique_ptr<VariableString> unique(new VariableString);
+		new_var = std::move(unique);
 
 		std::string aux_str = value;
 

@@ -108,7 +108,7 @@ namespace appSet
 			 * @param value
 			 * @return
 			 */
-			VariableBase * analize_type_data(const std::string &value);
+			std::shared_ptr<VariableBase> analize_type_data(const std::string &value);
 			/**
 			 *
 			 * @param vec_aux

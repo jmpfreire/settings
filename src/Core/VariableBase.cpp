@@ -2,17 +2,17 @@
 
 namespace appSet {
 
-int VariableBase::get_value_int()
+int VariableBase::get_value_int() const
 {
 	throw EWrongValue("Wrong class the object do not have integer value");
 }
 
-double VariableBase::get_value_double()
+double VariableBase::get_value_double() const
 {
 	throw EWrongValue("Wrong class the object do not have double value");
 }
 
-std::string VariableBase::get_value_string()
+std::string VariableBase::get_value_string() const
 {
 	throw EWrongValue("Wrong class the object do not have string value");
 }
@@ -22,7 +22,7 @@ VariableBase * VariableBase::get_value_vector(const int &index)
 	throw EWrongValue("Wrong class the object do not have vector class");
 }
 
-int VariableBase::get_num_elems_vec()
+int VariableBase::get_num_elems_vec() const
 {
 	throw EWrongValue("Wrong class the object do not have vector class");
 }
@@ -52,7 +52,7 @@ VariableBase * VariableBase::get_value_map(const std::string &key)
 	throw EWrongValue("Wrong class the object do not have map class");
 }
 
-int VariableBase::get_num_elems_map()
+int VariableBase::get_num_elems_map() const
 {
 	throw EWrongValue("Wrong class the object do not have map class");
 }

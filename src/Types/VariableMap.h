@@ -33,27 +33,91 @@
  */
 namespace appSet
 {
+	/**
+	 * @class VariableMap
+	 *
+	 * @brief
+	 */
 	class VariableMap: public appSet::VariableBase
 	{
+		/**
+		 *
+		 */
 		typedef std::pair<std::map<std::string,
 							VariableBase *>::iterator, bool> def_check_insert;
 
 		public:
+			/**
+			 *
+			 */
 			VariableMap();
-			virtual ~VariableMap();
+			/**
+			 *
+			 */
+			~VariableMap();
+			/**
+			 *
+			 * @return
+			 */
 			VariableMap * clone() const;
-			std::string get_msg_string_values(const std::string &map_key);
+			/**
+			 *
+			 * @param map_key
+			 * @return
+			 */
+			std::string get_msg_string_values(const std::string &map_key) const;
+			/**
+			 *
+			 * @param key
+			 * @param v
+			 */
 			void set_value(const std::string &key, const int &v);
+			/**
+			 *
+			 * @param key
+			 * @param v
+			 */
 			void set_value(const std::string &key, const double &v);
+			/**
+			 *
+			 * @param key
+			 * @param v
+			 */
 			void set_value(const std::string &key, const std::string &v);
-		void get_value(std::map<std::string, int> &mv);
-		void get_value(std::map<std::string, double> &mv);
-		void get_value(std::map<std::string, std::string> &mv);
+			/**
+			 *
+			 * @param mv
+			 */
+			void get_value(std::map<std::string, int> &mv);
+			/**
+			 *
+			 * @param mv
+			 */
+			void get_value(std::map<std::string, double> &mv);
+			/**
+			 *
+			 * @param mv
+			 */
+			void get_value(std::map<std::string, std::string> &mv);
+			/**
+			 *
+			 * @param key
+			 * @return
+			 */
 			VariableBase * get_value_map(const std::string &key);
-			int get_num_elems_map();
+			/**
+			 *
+			 * @return
+			 */
+			int get_num_elems_map() const;
+			/**
+			 *
+			 * @param key
+			 * @return
+			 */
 			VariableBase * operator[](const std::string &key);
 		private:
-			std::map<std::string, VariableBase *> value;
+			std::map<std::string, VariableBase *> value; /**< */
 	};
 } /*! @}*/
 #endif /* VARIABLEMAP_H_ */

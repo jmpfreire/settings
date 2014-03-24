@@ -63,7 +63,7 @@ namespace appSet
 			 * @param map_key
 			 * @return
 			 */
-			virtual std::string get_msg_string_values(const std::string &map_key) = 0;
+			virtual std::string get_msg_string_values(const std::string &map_key) const = 0;
 			//VariableInt
 			/**
 			 *
@@ -74,7 +74,7 @@ namespace appSet
 			 *
 			 * @return
 			 */
-			virtual int get_value_int();
+			virtual int get_value_int() const;
 			//VariableDouble
 			/**
 			 *
@@ -85,7 +85,7 @@ namespace appSet
 			 *
 			 * @return
 			 */
-			virtual double get_value_double();
+			virtual double get_value_double() const;
 			//VariableString
 			/**
 			 *
@@ -96,7 +96,7 @@ namespace appSet
 			 *
 			 * @return
 			 */
-			virtual std::string get_value_string();
+			virtual std::string get_value_string() const;
 			//VariableVector
 			/**
 			 *
@@ -108,7 +108,7 @@ namespace appSet
 			 *
 			 * @return
 			 */
-			virtual int get_num_elems_vec();
+			virtual int get_num_elems_vec() const;
 			/**
 			 *
 			 * @param index
@@ -159,7 +159,7 @@ namespace appSet
 			 *
 			 * @return
 			 */
-			virtual int get_num_elems_map();
+			virtual int get_num_elems_map() const;
 			/**
 			 *
 			 * @param key

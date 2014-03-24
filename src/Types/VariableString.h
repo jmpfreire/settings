@@ -31,17 +31,41 @@
  */
 namespace appSet
 {
+	/**
+	 * @class VariableString
+	 *
+	 * @brief
+	 */
 	class VariableString: public appSet::VariableBase
 	{
 		public:
+			/**
+			 *
+			 */
 			VariableString();
-			virtual ~VariableString();
+			/**
+			 *
+			 * @return
+			 */
 			VariableString * clone() const;
-			std::string get_msg_string_values(const std::string &map_key);
+			/**
+			 *
+			 * @param map_key
+			 * @return
+			 */
+			std::string get_msg_string_values(const std::string &map_key) const;
+			/**
+			 *
+			 * @param v
+			 */
 			void set_value(const std::string &v);
-			std::string get_value_string();
+			/**
+			 *
+			 * @return
+			 */
+			std::string get_value_string() const;
 		private:
-			std::string value;
+			std::string value; /**< */
 	};
 } /*! @}*/
 #endif /* VARIABLESTRING_H_ */

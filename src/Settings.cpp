@@ -10,7 +10,7 @@ Settings::Settings(const std::string &pp): pref_file_path(pp)
 	}
 }
 
-void Settings::print_settings_values()
+void Settings::print_settings_values() const
 {
 	this->schema.print_settings_values();
 }

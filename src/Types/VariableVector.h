@@ -33,22 +33,67 @@
  */
 namespace appSet
 {
-
+	/**
+	 * @class VariableVector
+	 *
+	 * @brief
+	 */
 	class VariableVector: public appSet::VariableBase
 	{
 		public:
+			/**
+			 *
+			 */
 			VariableVector();
-			virtual ~VariableVector();
+			/**
+			 *
+			 */
+			~VariableVector();
+			/**
+			 *
+			 * @return
+			 */
 			VariableVector * clone() const;
-			std::string get_msg_string_values(const std::string &map_key);
+			/**
+			 *
+			 * @param map_key
+			 * @return
+			 */
+			std::string get_msg_string_values(const std::string &map_key) const;
+			/**
+			 *
+			 * @param v
+			 */
 			void set_value(const int &v);
+			/**
+			 *
+			 * @param v
+			 */
 			void set_value(const double &v);
+			/**
+			 *
+			 * @param v
+			 */
 			void set_value(const std::string &v);
+			/**
+			 *
+			 * @param index
+			 * @return
+			 */
 			VariableBase * get_value_vector(const int &index);
-			int get_num_elems_vec();
+			/**
+			 *
+			 * @return
+			 */
+			int get_num_elems_vec() const;
+			/**
+			 *
+			 * @param index
+			 * @return
+			 */
 			VariableBase * operator[](const int &index);
 		private:
-			std::vector<VariableBase *> value;
+			std::vector<VariableBase *> value; /**< */
 	};
 } /*! @}*/
 #endif /* VARIABLEVECTOR_H_ */

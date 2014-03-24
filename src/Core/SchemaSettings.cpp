@@ -9,10 +9,10 @@ SchemaSettings::SchemaSettings(): id_schema("")
 
 SchemaSettings::~SchemaSettings()
 {
-	for(def_settings::iterator it = settings_table.begin(); it != settings_table.end(); it++)
+	for(auto &th : settings_table)
 	{
-		delete it->second;
-		it->second = nullptr;
+		delete th.second;
+		th.second = nullptr;
 	}
 
 	settings_table.clear();
@@ -23,10 +23,8 @@ SchemaSettings::SchemaSettings(const SchemaSettings &ss)
 	operator=(ss);
 }
 
-void SchemaSettings::print_settings_values()
+void SchemaSettings::print_settings_values() const
 {
-	std::map<std::string, VariableBase *>::iterator iter;
-
 	std::cout<<std::endl;
 	sysUtil::Log::print_log("***************INICIO FICHERO CONFIGURACION***************", 4, 7);
 	std::cout<<std::endl;

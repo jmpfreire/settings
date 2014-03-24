@@ -9,7 +9,13 @@ VariableMap::VariableMap():VariableBase()
 
 VariableMap::~VariableMap()
 {
+	for(auto &th : value)
+	{
+		delete th.second;
+		th.second = nullptr;
+	}
 
+	value.clear();
 }
 
 VariableMap * VariableMap::VariableMap::clone() const
@@ -17,16 +23,15 @@ VariableMap * VariableMap::VariableMap::clone() const
 	return new VariableMap(*this);
 }
 
-std::string VariableMap::get_msg_string_values(const std::string &map_key)
+std::string VariableMap::get_msg_string_values(const std::string &map_key) const
 {
 	std::string msg;
-	std::map<std::string, VariableBase *>::iterator iter;
 
 	msg = "\nValores para la tabla " + map_key + "\n{\n";
 
-	for(iter = value.begin(); iter != value.end(); ++iter)
+	for(auto elem_map : value)
 	{
-		msg += "\t" + iter->second->get_msg_string_values(iter->first) + "\n";
+		msg += "\t" + elem_map.second->get_msg_string_values(elem_map.first) + "\n";
 	}
 
 	msg += "}\n";
@@ -115,7 +120,7 @@ VariableBase * VariableMap::get_value_map(const std::string &key)
 	return value[key];
 }
 
-int VariableMap::get_num_elems_map()
+int VariableMap::get_num_elems_map() const
 {
 	return (int)value.size();
 }

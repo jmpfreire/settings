@@ -7,17 +7,12 @@ VariableDouble::VariableDouble() :VariableBase(), value(0.0)
 
 }
 
-VariableDouble::~VariableDouble()
-{
-
-}
-
 VariableDouble * VariableDouble::clone() const
 {
 	return new VariableDouble(*this);
 }
 
-std::string VariableDouble::get_msg_string_values(const std::string &map_key)
+std::string VariableDouble::get_msg_string_values(const std::string &map_key) const
 {
 	std::string msg;
 
@@ -31,7 +26,7 @@ void VariableDouble::set_value(const double &v)
 	value = v;
 }
 
-double VariableDouble::get_value_double()
+double VariableDouble::get_value_double() const
 {
 	return value;
 }

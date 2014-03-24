@@ -31,17 +31,41 @@
  */
 namespace appSet
 {
+	/**
+	 * @class VariableDouble
+	 *
+	 * @brief
+	 */
 	class VariableDouble: public appSet::VariableBase
 	{
 		public:
+			/**
+			 *
+			 */
 			VariableDouble();
-			virtual ~VariableDouble();
+			/**
+			 *
+			 * @return
+			 */
 			VariableDouble * clone() const;
-			std::string get_msg_string_values(const std::string &map_key);
+			/**
+			 *
+			 * @param map_key
+			 * @return
+			 */
+			std::string get_msg_string_values(const std::string &map_key) const;
+			/**
+			 *
+			 * @param v
+			 */
 			void set_value(const double &v);
-			double get_value_double();
+			/**
+			 *
+			 * @return
+			 */
+			double get_value_double() const;
 		private:
-			double value;
+			double value; /**< */
 	};
 
 } /*! @}*/

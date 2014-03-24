@@ -9,7 +9,14 @@ VariableVector::VariableVector() :VariableBase()
 
 VariableVector::~VariableVector()
 {
-	// TODO Auto-generated destructor stub
+	for(auto &th : value)
+	{
+		delete th;
+		th = nullptr;
+	}
+
+	value.clear();
+	value.shrink_to_fit();
 }
 
 VariableVector * VariableVector::clone() const
@@ -17,17 +24,15 @@ VariableVector * VariableVector::clone() const
 	return new VariableVector(*this);
 }
 
-std::string VariableVector::get_msg_string_values(const std::string &map_key)
+std::string VariableVector::get_msg_string_values(const std::string &map_key) const
 {
 	std::string msg;
 
-	int num_elems = this->value.size();
-
 	msg = "\nValores para la tabla " + map_key + "\n{\n";
 
-	for(int i = 0; i < num_elems; i++)
+	for(auto elem_v : value)
 	{
-		msg += "\t" + value[i]->get_msg_string_values(map_key) + "\n";
+		msg += "\t" + elem_v->get_msg_string_values(map_key) + "\n";
 	}
 
 	msg += "}\n";
@@ -67,7 +72,7 @@ VariableBase * VariableVector::get_value_vector(const int &index)
 	return value[index];
 }
 
-int VariableVector::get_num_elems_vec()
+int VariableVector::get_num_elems_vec() const
 {
 	return (int)value.size();
 }

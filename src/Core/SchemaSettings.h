@@ -76,7 +76,7 @@ namespace appSet
 			/**
 			 *
 			 */
-			void print_settings_values();
+			void print_settings_values() const;
 			/**
 			 *
 			 * @param is

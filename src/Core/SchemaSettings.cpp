@@ -9,13 +9,7 @@ SchemaSettings::SchemaSettings(): id_schema("")
 
 SchemaSettings::~SchemaSettings()
 {
-
-}
-
-SchemaSettings::SchemaSettings(const SchemaSettings &ss)
-{
-	settings_table = ss.settings_table;
-	id_schema = ss.id_schema;
+	settings_table.clear();
 }
 
 void SchemaSettings::print_settings_values()
@@ -98,14 +92,6 @@ void SchemaSettings::set_value(const std::string &key, std::map<std::string, std
 	{
 		sysUtil::Log::print_log("Unable to add the map ", 4, 3);
 	}
-}
-
-SchemaSettings & SchemaSettings::operator=(const SchemaSettings &ss)
-{
-	this->settings_table = ss.settings_table;
-	this->id_schema = ss.id_schema;
-
-	return *this;
 }
 
 VariableBase & SchemaSettings::operator[](const std::string &key)

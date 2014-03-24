@@ -41,7 +41,7 @@ namespace appSet
 		public:
 			VariableMap();
 			virtual ~VariableMap();
-			VariableMap * clone();
+			VariableMap * clone() const;
 			std::string get_msg_string_values(const std::string &map_key);
 			void set_value(const std::string &key, const int &v);
 			void set_value(const std::string &key, const double &v);

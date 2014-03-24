@@ -36,7 +36,7 @@ namespace appSet
 		public:
 			VariableDouble();
 			virtual ~VariableDouble();
-			VariableDouble * clone();
+			VariableDouble * clone() const;
 			std::string get_msg_string_values(const std::string &map_key);
 			void set_value(const double &v);
 			double get_value_double();

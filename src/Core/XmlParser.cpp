@@ -2,7 +2,7 @@
 
 namespace appSet {
 
-XmlParser::XmlParser(SchemaSettings &ss) : xmlpp::SaxParser()
+XmlParser::XmlParser(SchemaSettings &ss) : xmlpp::SaxParser(), app_settings(&ss), id_aux("")
 {
 	while(!tag_stack.empty())
 	{
@@ -11,14 +11,28 @@ XmlParser::XmlParser(SchemaSettings &ss) : xmlpp::SaxParser()
 
 	map_aux.clear();
 	v_aux.clear();
-	id_aux = "";
-
-	app_settings = &ss;
 }
 
 XmlParser::~XmlParser()
 {
+	app_settings = nullptr;
 
+	//String
+	node_name.clear();
+	node_name.shrink_to_fit();
+	id_aux.clear();
+	id_aux.shrink_to_fit();
+
+	//Vector
+	v_aux.clear();
+	v_aux.shrink_to_fit();
+
+	while(!tag_stack.empty())
+	{
+		tag_stack.pop();
+	}
+
+	map_aux.clear();
 }
 
 void XmlParser::on_start_element(const Glib::ustring& name_xml,const AttributeList& properties)

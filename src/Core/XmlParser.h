@@ -37,22 +37,47 @@
  */
 namespace appSet
 {
+	/**
+	 * @class XmlParser
+	 *
+	 * @brief
+	 */
 	class XmlParser: public xmlpp::SaxParser
 	{
 		public:
+			/**
+			 *
+			 * @param ss
+			 */
 			XmlParser(SchemaSettings &ss);
+			/**
+			 *
+			 */
 			virtual ~XmlParser();
 		protected:
+			/**
+			 *
+			 * @param name_xml
+			 * @param properties
+			 */
 			virtual void on_start_element(const Glib::ustring& name_xml,const AttributeList& properties);
+			/**
+			 *
+			 * @param name
+			 */
 			virtual void on_end_element(const Glib::ustring& name);
+			/**
+			 *
+			 * @param text
+			 */
 			virtual void on_characters(const Glib::ustring& text);
 		private:
-			SchemaSettings * app_settings;
-			std::string node_name;
-			std::stack<std::string> tag_stack;
-			std::map<std::string, std::string> map_aux;
-			std::string id_aux;
-			std::vector<std::string> v_aux;
+			SchemaSettings * app_settings; /**< */
+			std::string node_name; /**< */
+			std::stack<std::string> tag_stack; /**< */
+			std::map<std::string, std::string> map_aux; /**< */
+			std::string id_aux; /**< */
+			std::vector<std::string> v_aux; /**< */
 	};
 } /*! @}*/
 #endif /* XMLPARSER_H_ */

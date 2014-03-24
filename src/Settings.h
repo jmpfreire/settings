@@ -36,23 +36,49 @@
  */
 namespace appSet
 {
+	/**
+	 * @class Settings
+	 *
+	 * @brief
+	 */
 	class Settings
 	{
 		public:
-			Settings();
+			/**
+			 *
+			 */
+			Settings() = default;
+			/**
+			 *
+			 * @param pp
+			 */
 			Settings(const std::string &pp);
-			virtual ~Settings();
-			Settings(const Settings &s);
+			/**
+			 *
+			 */
 			void print_settings_values();
+			/**
+			 *
+			 * @param key
+			 * @return
+			 */
 			VariableBase & operator[](const std::string &key);
-			Settings & operator=(const Settings &s);
 		private:
 			//Methods
+			/**
+			 *
+			 * @return
+			 */
 			SchemaSettings * get_schema();
+			/**
+			 *
+			 * @param path
+			 * @return
+			 */
 			bool load_settings_file(const std::string &path);
 			//Attributes
-			std::string pref_file_path;
-			SchemaSettings schema;
+			std::string pref_file_path; /**< */
+			SchemaSettings schema; /**< */
 	};
 } /*! @}*/
 #endif /* SETTINGS_H_ */

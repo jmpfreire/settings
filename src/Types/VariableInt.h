@@ -36,7 +36,7 @@ namespace appSet
 		public:
 			VariableInt();
 			virtual ~VariableInt();
-			VariableInt * clone();
+			VariableInt * clone() const;
 			std::string get_msg_string_values(const std::string &map_key);
 			void set_value(const int &v);
 			int get_value_int();

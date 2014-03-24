@@ -25,6 +25,7 @@
 #include <vector>
 #include <map>
 #include <iostream>
+#include <memory>
 
 #include "Log.h"
 #include "Utils.h"
@@ -36,35 +37,134 @@
  */
 namespace appSet
 {
+	/**
+	 * @class VariableBase
+	 *
+	 * @brief
+	 */
 	class VariableBase
 	{
 		public:
-			VariableBase();
+			/**
+			 *
+			 */
+			VariableBase() = default;
+			/**
+			 *
+			 */
 			virtual ~VariableBase();
-			virtual VariableBase * clone() = 0;
+			/**
+			 *
+			 * @return
+			 */
+			virtual VariableBase * clone() const = 0;
+			/**
+			 *
+			 * @param map_key
+			 * @return
+			 */
 			virtual std::string get_msg_string_values(const std::string &map_key) = 0;
 			//VariableInt
+			/**
+			 *
+			 * @param v
+			 */
 			virtual void set_value(const int &v){return;} //VariableVector
+			/**
+			 *
+			 * @return
+			 */
 			virtual int get_value_int();
 			//VariableDouble
+			/**
+			 *
+			 * @param v
+			 */
 			virtual void set_value(const double &v){return;} //VariableVector
+			/**
+			 *
+			 * @return
+			 */
 			virtual double get_value_double();
 			//VariableString
+			/**
+			 *
+			 * @param v
+			 */
 			virtual void set_value(const std::string &v){return;} //VariableVector
+			/**
+			 *
+			 * @return
+			 */
 			virtual std::string get_value_string();
 			//VariableVector
+			/**
+			 *
+			 * @param index
+			 * @return
+			 */
 			virtual VariableBase * get_value_vector(const int &index);
+			/**
+			 *
+			 * @return
+			 */
 			virtual int get_num_elems_vec();
+			/**
+			 *
+			 * @param index
+			 * @return
+			 */
 			virtual VariableBase * operator[](const int &index);
 			//VariableMap
+			/**
+			 *
+			 * @param key
+			 * @param v
+			 */
 			virtual void set_value(const std::string &key, const int &v){return;}
+			/**
+			 *
+			 * @param key
+			 * @param v
+			 */
 			virtual void set_value(const std::string &key, const double &v){return;}
+			/**
+			 *
+			 * @param key
+			 * @param v
+			 */
 			virtual void set_value(const std::string &key, const std::string &v){return;}
+			/**
+			 *
+			 * @param mv
+			 */
 			virtual void get_value(std::map<std::string, int> &mv);
+			/**
+			 *
+			 * @param mv
+			 */
 			virtual void get_value(std::map<std::string, double> &mv);
+			/**
+			 *
+			 * @param mv
+			 */
 			virtual void get_value(std::map<std::string, std::string> &mv);
+			/**
+			 *
+			 * @param key
+			 * @return
+			 */
 			virtual VariableBase * get_value_map(const std::string &key);
+			/**
+			 *
+			 * @return
+			 */
 			virtual int get_num_elems_map();
+			/**
+			 *
+			 * @param key
+			 * @return
+			 */
 			virtual VariableBase * operator[](const std::string &key);
 	};
 

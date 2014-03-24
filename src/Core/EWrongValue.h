@@ -29,14 +29,26 @@
  */
 namespace appSet
 {
+	/**
+	 * @class EWrongValue
+	 *
+	 * @brief
+	 */
 	class EWrongValue
 	{
 		public:
+			/**
+			 *
+			 * @param m
+			 */
 			EWrongValue(const std::string &m);
-			virtual ~EWrongValue();
+			/**
+			 *
+			 * @return
+			 */
 			std::string what();
 		private:
-			std::string msg;
+			std::string msg; /**< */
 	};
 } /*! @}*/
 #endif /* EWRONGVALUE_H_ */

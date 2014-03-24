@@ -12,7 +12,7 @@ VariableVector::~VariableVector()
 	// TODO Auto-generated destructor stub
 }
 
-VariableVector * VariableVector::clone()
+VariableVector * VariableVector::clone() const
 {
 	return new VariableVector(*this);
 }

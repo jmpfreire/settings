@@ -12,7 +12,7 @@ VariableString::~VariableString()
 
 }
 
-VariableString * VariableString::clone()
+VariableString * VariableString::clone() const
 {
 	return new VariableString(*this);
 }

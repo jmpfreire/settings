@@ -12,7 +12,7 @@ VariableDouble::~VariableDouble()
 
 }
 
-VariableDouble * VariableDouble::clone()
+VariableDouble * VariableDouble::clone() const
 {
 	return new VariableDouble(*this);
 }
@@ -21,7 +21,7 @@ std::string VariableDouble::get_msg_string_values(const std::string &map_key)
 {
 	std::string msg;
 
-	msg = map_key + " (double) el valor es: " + sysUtil::Utils::converString(value);
+	msg = map_key + " (double) el valor es: " + std::to_string(value);
 
 	return msg;
 }

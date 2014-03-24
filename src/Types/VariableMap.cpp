@@ -12,7 +12,7 @@ VariableMap::~VariableMap()
 
 }
 
-VariableMap * VariableMap::VariableMap::clone()
+VariableMap * VariableMap::VariableMap::clone() const
 {
 	return new VariableMap(*this);
 }

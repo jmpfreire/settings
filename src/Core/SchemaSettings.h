@@ -42,31 +42,89 @@
  */
 namespace appSet
 {
+	/**
+	 * @class SchemaSettings
+	 *
+	 * @brief
+	 */
 	class SchemaSettings
 	{
+		/**
+		 *
+		 */
 		typedef std::map<std::string, VariableBase *> def_settings;
 
+		/**
+		 *
+		 */
 		typedef std::pair<std::map<std::string,
 					VariableBase *>::iterator, bool> def_check_insert;
 		public:
+			/**
+			 *
+			 */
 			SchemaSettings();
+			/**
+			 *
+			 */
 			virtual ~SchemaSettings();
-			SchemaSettings(const SchemaSettings &ss);
+			/**
+			 *
+			 */
 			void print_settings_values();
+			/**
+			 *
+			 * @param is
+			 */
 			void set_id_schema(const std::string &is);
+			/**
+			 *
+			 * @param key
+			 * @param value
+			 */
 			void set_value(const std::string &key, const std::string &value);
+			/**
+			 *
+			 * @param key
+			 * @param value
+			 */
 			void set_value(const std::string &key, const std::vector<std::string> &value);
+			/**
+			 *
+			 * @param key
+			 * @param value
+			 */
 			void set_value(const std::string &key, std::map<std::string, std::string> value);
-			SchemaSettings & operator=(const SchemaSettings &ss);
+			/**
+			 *
+			 * @param key
+			 * @return
+			 */
 			VariableBase & operator[](const std::string &key);
 		private:
 			//Methods
+			/**
+			 *
+			 * @param value
+			 * @return
+			 */
 			VariableBase * analize_type_data(const std::string &value);
+			/**
+			 *
+			 * @param vec_aux
+			 * @param value
+			 */
 			void set_data_vector(VariableVector &vec_aux, const std::string &value);
+			/**
+			 *
+			 * @param map_aux
+			 * @param key
+			 * @param value
+			 */
 			void set_data_map(VariableMap &map_aux, const std::string &key, const std::string &value);
 			//Attributes
-			def_settings settings_table;
-			std::string id_schema;
+			def_settings settings_table; /**< */
+			std::string id_schema; /**< */
 	};
 } /*! @}*/
 #endif /* SCHEMASETTINGS_H_ */

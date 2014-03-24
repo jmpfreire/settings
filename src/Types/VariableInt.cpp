@@ -12,7 +12,7 @@ VariableInt::~VariableInt()
 
 }
 
-VariableInt * VariableInt::clone()
+VariableInt * VariableInt::clone() const
 {
 	return new VariableInt(*this);
 }
@@ -21,7 +21,7 @@ std::string VariableInt::get_msg_string_values(const std::string &map_key)
 {
 	std::string msg;
 
-	msg = map_key + " (int) el valor es: " + sysUtil::Utils::converString(value);
+	msg = map_key + " (int) el valor es: " + std::to_string(value);
 
 	return msg;
 }

@@ -1,5 +1,5 @@
-#ifndef VARIABLEVECTOR_H_
-#define VARIABLEVECTOR_H_
+#ifndef VARIABLEINT_H_
+#define VARIABLEINT_H_
 
 /**
  *  @file
@@ -21,11 +21,9 @@
  *  along with libSettings.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "../VariableBase.h"
+#include <iostream>
 
-#include "VariableInt.h"
-#include "VariableDouble.h"
-#include "VariableString.h"
+#include "VariableBase.h"
 
 /**
  *  \addtogroup appSet
@@ -33,22 +31,17 @@
  */
 namespace appSet
 {
-
-	class VariableVector: public appSet::VariableBase
+	class VariableInt: public appSet::VariableBase
 	{
 		public:
-			VariableVector();
-			virtual ~VariableVector();
-			VariableVector * clone();
+			VariableInt();
+			virtual ~VariableInt();
+			VariableInt * clone();
 			std::string get_msg_string_values(const std::string &map_key);
 			void set_value(const int &v);
-			void set_value(const double &v);
-			void set_value(const std::string &v);
-			VariableBase * get_value_vector(const int &index);
-			int get_num_elems_vec();
-			VariableBase * operator[](const int &index);
+			int get_value_int();
 		private:
-			std::vector<VariableBase *> value;
+			int value;
 	};
 } /*! @}*/
-#endif /* VARIABLEVECTOR_H_ */
+#endif /* VARIABLEINT_H_ */

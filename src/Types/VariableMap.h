@@ -1,5 +1,5 @@
-#ifndef VARIABLEINT_H_
-#define VARIABLEINT_H_
+#ifndef VARIABLEMAP_H_
+#define VARIABLEMAP_H_
 
 /**
  *  @file
@@ -21,9 +21,11 @@
  *  along with libSettings.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include <iostream>
+#include "VariableBase.h"
 
-#include "../VariableBase.h"
+#include "VariableInt.h"
+#include "VariableDouble.h"
+#include "VariableString.h"
 
 /**
  *  \addtogroup appSet
@@ -31,17 +33,27 @@
  */
 namespace appSet
 {
-	class VariableInt: public appSet::VariableBase
+	class VariableMap: public appSet::VariableBase
 	{
+		typedef std::pair<std::map<std::string,
+							VariableBase *>::iterator, bool> def_check_insert;
+
 		public:
-			VariableInt();
-			virtual ~VariableInt();
-			VariableInt * clone();
+			VariableMap();
+			virtual ~VariableMap();
+			VariableMap * clone();
 			std::string get_msg_string_values(const std::string &map_key);
-			void set_value(const int &v);
-			int get_value_int();
+			void set_value(const std::string &key, const int &v);
+			void set_value(const std::string &key, const double &v);
+			void set_value(const std::string &key, const std::string &v);
+		void get_value(std::map<std::string, int> &mv);
+		void get_value(std::map<std::string, double> &mv);
+		void get_value(std::map<std::string, std::string> &mv);
+			VariableBase * get_value_map(const std::string &key);
+			int get_num_elems_map();
+			VariableBase * operator[](const std::string &key);
 		private:
-			int value;
+			std::map<std::string, VariableBase *> value;
 	};
 } /*! @}*/
-#endif /* VARIABLEINT_H_ */
+#endif /* VARIABLEMAP_H_ */

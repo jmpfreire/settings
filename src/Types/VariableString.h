@@ -23,7 +23,7 @@
 
 #include <iostream>
 
-#include "../VariableBase.h"
+#include "VariableBase.h"
 
 /**
  *  \addtogroup appSet

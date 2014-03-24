@@ -26,11 +26,11 @@
 #include <iostream>
 
 #include "VariableBase.h"
-#include "types/VariableString.h"
-#include "types/VariableInt.h"
-#include "types/VariableDouble.h"
-#include "types/VariableVector.h"
-#include "types/VariableMap.h"
+#include "VariableString.h"
+#include "VariableInt.h"
+#include "VariableDouble.h"
+#include "VariableVector.h"
+#include "VariableMap.h"
 
 #include "Log.h"
 

@@ -7,6 +7,7 @@
 					<externalSetting>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="includePath" name="/Settings"/>
 						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/Settings/Release"/>
+						<entry flags="VALUE_WORKSPACE_PATH" kind="libraryPath" name="/Settings/Release 64bit"/>
 						<entry flags="RESOLVED" kind="libraryFile" name="Settings" srcPrefixMapping="" srcRootPath=""/>
 					</externalSetting>
 				</externalSettings>
@@ -39,8 +40,9 @@
 									<listOptionValue builtIn="false" value="/usr/include/libxml++-2.6"/>
 									<listOptionValue builtIn="false" value="/usr/lib/libxml++-2.6/include"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/Core}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/Utilities}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/types}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/src/Types}&quot;"/>
 									<listOptionValue builtIn="false" value="/usr/include/gtkmm-3.0"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.other.other.1284476656" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-c -fmessage-length=0 -std=c++11" valueType="string"/>

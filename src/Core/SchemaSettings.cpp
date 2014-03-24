@@ -18,6 +18,11 @@ SchemaSettings::~SchemaSettings()
 	settings_table.clear();
 }
 
+SchemaSettings::SchemaSettings(const SchemaSettings &ss)
+{
+	operator=(ss);
+}
+
 void SchemaSettings::print_settings_values()
 {
 	std::map<std::string, VariableBase *>::iterator iter;
@@ -109,6 +114,16 @@ void SchemaSettings::set_value(const std::string &key, std::map<std::string, std
 VariableBase & SchemaSettings::operator[](const std::string &key)
 {
 	return *settings_table[key];
+}
+
+SchemaSettings & SchemaSettings::operator=(const SchemaSettings &ss)
+{
+	for(def_settings::const_iterator it = ss.settings_table.cbegin(); it != ss.settings_table.cend(); it++)
+	{
+		this->settings_table.insert(std::make_pair(it->first, it->second->clone()));
+	}
+
+	return *this;
 }
 
 std::shared_ptr<VariableBase> SchemaSettings::analize_type_data(const std::string &value)

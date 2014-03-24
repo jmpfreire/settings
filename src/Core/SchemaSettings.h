@@ -70,6 +70,11 @@ namespace appSet
 			virtual ~SchemaSettings();
 			/**
 			 *
+			 * @param ss
+			 */
+			SchemaSettings(const SchemaSettings &ss);
+			/**
+			 *
 			 */
 			void print_settings_values();
 			/**
@@ -101,6 +106,12 @@ namespace appSet
 			 * @return
 			 */
 			VariableBase & operator[](const std::string &key);
+			/**
+			 *
+			 * @param ss
+			 * @return
+			 */
+			SchemaSettings & operator=(const SchemaSettings &ss);
 		private:
 			//Methods
 			/**

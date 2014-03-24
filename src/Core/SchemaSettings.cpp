@@ -33,11 +33,11 @@ void SchemaSettings::print_settings_values()
 
 	sysUtil::Log::print_log("Preferencias id: " + this->id_schema, 4, 7);
 
-	for(iter = settings_table.begin(); iter != settings_table.end(); ++iter)
+	for(auto elem_table : settings_table)
 	{
 		std::string part_msg;
 
-		part_msg = iter->second->get_msg_string_values(iter->first);
+		part_msg =  elem_table.second->get_msg_string_values(elem_table.first);
 
 		sysUtil::Log::print_log(part_msg, 4, 7);
 	}
@@ -56,7 +56,7 @@ void SchemaSettings::set_value(const std::string &key, const std::string &value)
 {
 	def_check_insert check;
 
-	check = settings_table.insert(std::pair<std::string, VariableBase *>(key, analize_type_data(value)->clone()));
+	check = settings_table.insert(std::make_pair(key, analize_type_data(value)->clone()));
 
 	if(!check.second)
 	{
@@ -66,18 +66,15 @@ void SchemaSettings::set_value(const std::string &key, const std::string &value)
 
 void SchemaSettings::set_value(const std::string &key, const std::vector<std::string> &value)
 {
-	int num_elem;
 	VariableVector * new_vec = new VariableVector;
 	def_check_insert check;
 
-	num_elem = value.size();
-
-	for(int i = 0; i < num_elem; i++)
+	for(auto elem_str : value)
 	{
-		this->set_data_vector(*new_vec, value[i]);
+		this->set_data_vector(*new_vec, elem_str);
 	}
 
-	check = settings_table.insert(std::pair<std::string, VariableBase *>(key, new_vec->clone()));
+	check = settings_table.insert(std::make_pair(key, new_vec->clone()));
 
 	if(!check.second)
 	{
@@ -93,14 +90,12 @@ void SchemaSettings::set_value(const std::string &key, std::map<std::string, std
 	VariableMap * new_map = new VariableMap;
 	def_check_insert check;
 
-	std::map<std::string, std::string>::iterator iter;
-
-	for(iter = value.begin(); iter != value.end(); ++iter)
+	for(auto elem_pair : value)
 	{
-		this->set_data_map(*new_map, iter->first, iter->second);
+		this->set_data_map(*new_map, elem_pair.first, elem_pair.second);
 	}
 
-	check = settings_table.insert(std::pair<std::string, VariableBase *>(key, new_map->clone()));
+	check = settings_table.insert(std::make_pair(key, new_map->clone()));
 
 	if(!check.second)
 	{

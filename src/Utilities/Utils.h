@@ -32,23 +32,25 @@ namespace sysUtil
 	{
 		public:
 			/**
-			 * Convierte un tipo entero (int) a un tipo cadena (string).
-			 * @param valor, entero que se va ha convertir a una cadena.
-			 * @return El entero convertido en cadena de tipo (string).
+			 *
+			 * @param value
+			 * @return
 			 */
-			static std::string converString(int valor);
-			/**
-			 * Convierte un tipo long entero (long int) a un tiop cadena (string).
-			 * @param valor, long entero que se va ha convertir a una cadena.
-			 * @return El long entero convertido en cadena de tipo (string).
-			 */
-			static std::string converString(long int valor);
-			/**
-			 * Convierte un tipo double a un tipo cadena (string).
-			 * @param valor, double que se va ha convertir a una cadena.
-			 * @return El double convertido en cadena de tipo (string).
-			 */
-			static std::string converString(double valor);
+			template <class T> static std::string convert_to_string(const T &value)
+			{
+				std::string str_res("");
+
+				if(std::is_arithmetic<T>::value)
+				{
+					std::ostringstream flujo;
+
+					flujo << value;
+
+					str_res = flujo.str();
+				}
+
+				return str_res;
+			}
 			/**
 			 * Convierte una cadena de caracteres (char *) a una cadena de caracteres de tipo (string)
 			 * @param cad, char * que contiene la cadena de caracteres.

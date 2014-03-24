@@ -2,36 +2,6 @@
 
 namespace sysUtil {
 
-std::string Utils::converString(int valor)
-{
-	std::ostringstream flujo;
-
-	flujo << valor;
-
-	return flujo.str();
-
-}
-
-std::string Utils::converString(long int valor)
-{
-	std::ostringstream flujo;
-
-	flujo << valor;
-
-	return flujo.str();
-
-}
-
-std::string Utils::converString(double valor)
-{
-	std::ostringstream flujo;
-
-	flujo << valor;
-
-	return flujo.str();
-
-}
-
 std::string Utils::convertCharToString(char *cad)
 {
 	std::ostringstream flujo;

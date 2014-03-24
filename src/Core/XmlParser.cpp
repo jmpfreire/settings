@@ -41,13 +41,13 @@ void XmlParser::on_start_element(const Glib::ustring& name_xml,const AttributeLi
 
 	if(node_name == "schema")
 	{
-		for(xmlpp::SaxParser::AttributeList::const_iterator iter = properties.begin(); iter != properties.end(); ++iter)
+		for(auto elem1 : properties)
 		{
 			try
 			{
-				if(iter->name == "id")
+				if(elem1.name == "id")
 				{
-					this->app_settings->set_id_schema(iter->value);
+					this->app_settings->set_id_schema(elem1.value);
 				}
 			}
 			catch(...)
@@ -60,11 +60,11 @@ void XmlParser::on_start_element(const Glib::ustring& name_xml,const AttributeLi
 	{
 		tag_stack.push(node_name);
 
-		for(xmlpp::SaxParser::AttributeList::const_iterator iter = properties.begin(); iter != properties.end(); ++iter)
+		for(auto elem1 : properties)
 		{
 			try
 			{
-				id_aux = (std::string)iter->value;
+				id_aux = (std::string)elem1.value;
 			}
 			catch(...)
 			{
@@ -81,7 +81,7 @@ void XmlParser::on_end_element(const Glib::ustring& name)
 		tag_stack.pop();
 	}
 
-	if(tag_stack.empty() && name != "schemalist" && name != "schema")
+	if(tag_stack.empty() && (name != "schemalist") && (name != "schema"))
 	{
 		if(map_aux.size())
 		{
@@ -110,11 +110,11 @@ void XmlParser::on_characters(const Glib::ustring& text)
 {
 	std::string aux_str(text);
 
-	if(!tag_stack.empty() && tag_stack.top() == node_name && std::isprint(aux_str[0]))
+	if(!tag_stack.empty() && (tag_stack.top() == node_name) && std::isprint(aux_str[0]))
 	{
 		if(id_aux != "")
 		{
-			map_aux.insert(std::pair<std::string, std::string>(id_aux, text));
+			map_aux.insert(std::make_pair(id_aux, text));
 		}
 		else
 		{

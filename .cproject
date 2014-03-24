@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?fileVersion 4.0.0?>
-
-<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+<?fileVersion 4.0.0?><cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="cdt.managedbuild.config.gnu.lib.debug.382188114">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="cdt.managedbuild.config.gnu.lib.debug.382188114" moduleId="org.eclipse.cdt.core.settings" name="Release 32bit">
@@ -13,11 +11,11 @@
 					</externalSetting>
 				</externalSettings>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -70,11 +68,11 @@
 					</externalSetting>
 				</externalSettings>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
@@ -121,21 +119,6 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="Settings.cdt.managedbuild.target.gnu.lib.1728001504" name="Static Library" projectType="cdt.managedbuild.target.gnu.lib"/>
 	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.lib.debug.382188114;cdt.managedbuild.config.gnu.lib.debug.382188114.;cdt.managedbuild.tool.gnu.c.compiler.lib.debug.715742237;cdt.managedbuild.tool.gnu.c.compiler.input.1748892716">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.lib.release.559087812;cdt.managedbuild.config.gnu.lib.release.559087812.;cdt.managedbuild.tool.gnu.c.compiler.lib.release.81607802;cdt.managedbuild.tool.gnu.c.compiler.input.1086745305">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.lib.release.559087812;cdt.managedbuild.config.gnu.lib.release.559087812.;cdt.managedbuild.tool.gnu.cpp.compiler.lib.release.1954861246;cdt.managedbuild.tool.gnu.cpp.compiler.input.1064727458">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
-		</scannerConfigBuildInfo>
-		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.lib.debug.382188114;cdt.managedbuild.config.gnu.lib.debug.382188114.;cdt.managedbuild.tool.gnu.cpp.compiler.lib.debug.270351661;cdt.managedbuild.tool.gnu.cpp.compiler.input.2055316036">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
-		</scannerConfigBuildInfo>
-	</storageModule>
 	<storageModule moduleId="refreshScope" versionNumber="1">
 		<resource resourceType="PROJECT" workspacePath="/Settings"/>
 	</storageModule>
@@ -145,4 +128,25 @@
 		</doc-comment-owner>
 	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.lib.debug.382188114;cdt.managedbuild.config.gnu.lib.debug.382188114.;cdt.managedbuild.tool.gnu.c.compiler.lib.debug.715742237;cdt.managedbuild.tool.gnu.c.compiler.input.1748892716">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.lib.release.559087812;cdt.managedbuild.config.gnu.lib.release.559087812.;cdt.managedbuild.tool.gnu.cpp.compiler.lib.release.1954861246;cdt.managedbuild.tool.gnu.cpp.compiler.input.1064727458">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.lib.release.559087812;cdt.managedbuild.config.gnu.lib.release.559087812.;cdt.managedbuild.tool.gnu.c.compiler.lib.release.81607802;cdt.managedbuild.tool.gnu.c.compiler.input.1086745305">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.lib.debug.382188114;cdt.managedbuild.config.gnu.lib.debug.382188114.;cdt.managedbuild.tool.gnu.cpp.compiler.lib.debug.270351661;cdt.managedbuild.tool.gnu.cpp.compiler.input.2055316036">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP"/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.lib.release.1206212578;cdt.managedbuild.config.gnu.lib.release.1206212578.;cdt.managedbuild.tool.gnu.cpp.compiler.lib.release.1799047768;cdt.managedbuild.tool.gnu.cpp.compiler.input.1680570361">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.lib.release.1206212578;cdt.managedbuild.config.gnu.lib.release.1206212578.;cdt.managedbuild.tool.gnu.c.compiler.lib.release.1936910051;cdt.managedbuild.tool.gnu.c.compiler.input.17971743">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+	</storageModule>
 </cproject>

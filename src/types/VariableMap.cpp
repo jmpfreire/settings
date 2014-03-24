@@ -1,57 +1,22 @@
-/**
- *  VariableMap.cpp
- *  This file is part of libSettings
- *
- *  Copyright (C) 2013  Jose Manuel Pintor Freire
- *
- *  libSettings is free software: you can redistribute it and/or
- *  modify it under the terms of the GNU Lesser General Public
- *  License as published by the Free Software Foundation, either
- *  version 3 of the License, or (at your option) any later version.
- *
- *  libSettings is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- *  Lesser General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with libSettings.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 #include "VariableMap.h"
 
 namespace appSet {
 
-/**
- *
- */
 VariableMap::VariableMap():VariableBase()
 {
 	value.clear();
 }
 
-/**
- *
- */
 VariableMap::~VariableMap()
 {
 
 }
 
-/**
- *
- * @return
- */
 VariableMap * VariableMap::VariableMap::clone()
 {
 	return new VariableMap(*this);
 }
 
-/**
- *
- * @param map_key
- * @return
- */
 std::string VariableMap::get_msg_string_values(const std::string &map_key)
 {
 	std::string msg;
@@ -69,11 +34,6 @@ std::string VariableMap::get_msg_string_values(const std::string &map_key)
 	return msg;
 }
 
-/**
- *
- * @param key
- * @param v
- */
 void VariableMap::set_value(const std::string &key, const int &v)
 {
 	VariableBase * new_value = new VariableInt;
@@ -89,11 +49,6 @@ void VariableMap::set_value(const std::string &key, const int &v)
 	}
 }
 
-/**
- *
- * @param key
- * @param v
- */
 void VariableMap::set_value(const std::string &key, const double &v)
 {
 	VariableBase * new_value = new VariableDouble;
@@ -109,11 +64,6 @@ void VariableMap::set_value(const std::string &key, const double &v)
 	}
 }
 
-/**
- *
- * @param key
- * @param v
- */
 void VariableMap::set_value(const std::string &key, const std::string &v)
 {
 	VariableBase * new_value = new VariableString;
@@ -130,10 +80,6 @@ void VariableMap::set_value(const std::string &key, const std::string &v)
 	}
 }
 
-/**
- *
- * @param mv
- */
 void VariableMap::get_value(std::map<std::string, int> &mv)
 {
 	std::map<std::string, VariableBase *>::iterator iter;
@@ -144,10 +90,6 @@ void VariableMap::get_value(std::map<std::string, int> &mv)
 	}
 }
 
-/**
- *
- * @param mv
- */
 void VariableMap::get_value(std::map<std::string, double> &mv)
 {
 	std::map<std::string, VariableBase *>::iterator iter;
@@ -158,10 +100,6 @@ void VariableMap::get_value(std::map<std::string, double> &mv)
 	}
 }
 
-/**
- *
- * @param mv
- */
 void VariableMap::get_value(std::map<std::string, std::string> &mv)
 {
 	std::map<std::string, VariableBase *>::iterator iter;
@@ -172,30 +110,16 @@ void VariableMap::get_value(std::map<std::string, std::string> &mv)
 	}
 }
 
-/**
- *
- * @param key
- * @return
- */
 VariableBase * VariableMap::get_value_map(const std::string &key)
 {
 	return value[key];
 }
 
-/**
- *
- * @return
- */
 int VariableMap::get_num_elems_map()
 {
 	return (int)value.size();
 }
 
-/**
- *
- * @param key
- * @return
- */
 VariableBase * VariableMap::operator[](const std::string &key)
 {
 	if(value.find(key) != value.end())

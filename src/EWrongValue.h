@@ -1,8 +1,11 @@
+#ifndef EWRONGVALUE_H_
+#define EWRONGVALUE_H_
+
 /**
- *  EWrongValue.h
+ *  @file
  *  This file is part of libSettings
  *
- *  Copyright (C) 2013  Jose Manuel Pintor Freire
+ *  Copyright (C) 2014  Jose Manuel Pintor Freire
  *
  *  libSettings is free software: you can redistribute it and/or
  *  modify it under the terms of the GNU Lesser General Public
@@ -18,11 +21,12 @@
  *  along with libSettings.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef EWRONGVALUE_H_
-#define EWRONGVALUE_H_
-
 #include <string>
 
+/**
+ *  \addtogroup appSet
+ *  @{
+ */
 namespace appSet
 {
 	class EWrongValue
@@ -34,5 +38,5 @@ namespace appSet
 		private:
 			std::string msg;
 	};
-} /* namespace appSet */
+} /*! @}*/
 #endif /* EWRONGVALUE_H_ */

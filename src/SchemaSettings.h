@@ -1,8 +1,11 @@
+#ifndef SCHEMASETTINGS_H_
+#define SCHEMASETTINGS_H_
+
 /**
- *  SchemaSettings.h
+ *  @file
  *  This file is part of libSettings
  *
- *  Copyright (C) 2013  Jose Manuel Pintor Freire
+ *  Copyright (C) 2014  Jose Manuel Pintor Freire
  *
  *  libSettings is free software: you can redistribute it and/or
  *  modify it under the terms of the GNU Lesser General Public
@@ -18,9 +21,6 @@
  *  along with libSettings.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef SCHEMASETTINGS_H_
-#define SCHEMASETTINGS_H_
-
 #include <map>
 #include <string>
 #include <iostream>
@@ -32,12 +32,14 @@
 #include "types/VariableVector.h"
 #include "types/VariableMap.h"
 
-#include "lexical_cast.hpp"
-
 #include "Log.h"
 
 #include <typeinfo>
 
+/**
+ *  \addtogroup appSet
+ *  @{
+ */
 namespace appSet
 {
 	class SchemaSettings
@@ -66,5 +68,5 @@ namespace appSet
 			def_settings settings_table;
 			std::string id_schema;
 	};
-} /* namespace appSet */
+} /*! @}*/
 #endif /* SCHEMASETTINGS_H_ */

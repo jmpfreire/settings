@@ -1,31 +1,7 @@
-/**
- *  XmlParse.cpp
- *  This file is part of libSettings
- *
- *  Copyright (C) 2013  Jose Manuel Pintor Freire
- *
- *  libSettings is free software: you can redistribute it and/or
- *  modify it under the terms of the GNU Lesser General Public
- *  License as published by the Free Software Foundation, either
- *  version 3 of the License, or (at your option) any later version.
- *
- *  libSettings is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- *  Lesser General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with libSettings.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 #include "XmlParser.h"
 
 namespace appSet {
 
-/**
- *
- * @param ss
- */
 XmlParser::XmlParser(SchemaSettings &ss) : xmlpp::SaxParser()
 {
 	while(!tag_stack.empty())
@@ -40,19 +16,11 @@ XmlParser::XmlParser(SchemaSettings &ss) : xmlpp::SaxParser()
 	app_settings = &ss;
 }
 
-/**
- *
- */
 XmlParser::~XmlParser()
 {
 
 }
 
-/**
- *
- * @param nameXml
- * @param properties
- */
 void XmlParser::on_start_element(const Glib::ustring& name_xml,const AttributeList& properties)
 {
 	node_name = name_xml;

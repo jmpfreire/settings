@@ -1,8 +1,11 @@
+#ifndef VARIABLEDOUBLE_H_
+#define VARIABLEDOUBLE_H_
+
 /**
- *  VariableDouble.h
+ *  @file
  *  This file is part of libSettings
  *
- *  Copyright (C) 2013  Jose Manuel Pintor Freire
+ *  Copyright (C) 2014  Jose Manuel Pintor Freire
  *
  *  libSettings is free software: you can redistribute it and/or
  *  modify it under the terms of the GNU Lesser General Public
@@ -18,13 +21,14 @@
  *  along with libSettings.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef VARIABLEDOUBLE_H_
-#define VARIABLEDOUBLE_H_
-
 #include <iostream>
 
 #include "../VariableBase.h"
 
+/**
+ *  \addtogroup appSet
+ *  @{
+ */
 namespace appSet
 {
 	class VariableDouble: public appSet::VariableBase
@@ -40,5 +44,5 @@ namespace appSet
 			double value;
 	};
 
-} /* namespace appSet */
+} /*! @}*/
 #endif /* VARIABLEDOUBLE_H_ */

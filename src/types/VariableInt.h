@@ -1,8 +1,11 @@
+#ifndef VARIABLEINT_H_
+#define VARIABLEINT_H_
+
 /**
- *  VariableInt.h
+ *  @file
  *  This file is part of libSettings
  *
- *  Copyright (C) 2013  Jose Manuel Pintor Freire
+ *  Copyright (C) 2014  Jose Manuel Pintor Freire
  *
  *  libSettings is free software: you can redistribute it and/or
  *  modify it under the terms of the GNU Lesser General Public
@@ -18,13 +21,14 @@
  *  along with libSettings.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef VARIABLEINT_H_
-#define VARIABLEINT_H_
-
 #include <iostream>
 
 #include "../VariableBase.h"
 
+/**
+ *  \addtogroup appSet
+ *  @{
+ */
 namespace appSet
 {
 	class VariableInt: public appSet::VariableBase
@@ -39,5 +43,5 @@ namespace appSet
 		private:
 			int value;
 	};
-} /* namespace appSet */
+} /*! @}*/
 #endif /* VARIABLEINT_H_ */

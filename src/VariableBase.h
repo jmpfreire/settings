@@ -1,8 +1,11 @@
+#ifndef VARIABLEBASE_H_
+#define VARIABLEBASE_H_
+
 /**
- *  VariableBase.h
+ *  @file
  *  This file is part of libSettings
  *
- *  Copyright (C) 2013  Jose Manuel Pintor Freire
+ *  Copyright (C) 2014  Jose Manuel Pintor Freire
  *
  *  libSettings is free software: you can redistribute it and/or
  *  modify it under the terms of the GNU Lesser General Public
@@ -18,9 +21,6 @@
  *  along with libSettings.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef VARIABLEBASE_H_
-#define VARIABLEBASE_H_
-
 #include <string>
 #include <vector>
 #include <map>
@@ -30,6 +30,10 @@
 #include "Utils.h"
 #include "EWrongValue.h"
 
+/**
+ *  \addtogroup appSet
+ *  @{
+ */
 namespace appSet
 {
 	class VariableBase
@@ -64,5 +68,5 @@ namespace appSet
 			virtual VariableBase * operator[](const std::string &key);
 	};
 
-} /* namespace appSet */
+} /*! @}*/
 #endif /* VARIABLEBASE_H_ */

@@ -1,56 +1,23 @@
-/**
- *  SchemaSettings.cpp
- *  This file is part of libSettings
- *
- *  Copyright (C) 2013  Jose Manuel Pintor Freire
- *
- *  libSettings is free software: you can redistribute it and/or
- *  modify it under the terms of the GNU Lesser General Public
- *  License as published by the Free Software Foundation, either
- *  version 3 of the License, or (at your option) any later version.
- *
- *  libSettings is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- *  Lesser General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with libSettings.  If not, see <http://www.gnu.org/licenses/>.
- */
-
 #include "SchemaSettings.h"
 
 namespace appSet {
 
-/**
- *
- */
 SchemaSettings::SchemaSettings(): id_schema("")
 {
 	settings_table.clear();
 }
 
-/**
- *
- */
 SchemaSettings::~SchemaSettings()
 {
 
 }
 
-/**
- *
- * @param ss
- */
 SchemaSettings::SchemaSettings(const SchemaSettings &ss)
 {
 	settings_table = ss.settings_table;
 	id_schema = ss.id_schema;
 }
 
-/**
- *
- */
 void SchemaSettings::print_settings_values()
 {
 	std::map<std::string, VariableBase *>::iterator iter;
@@ -75,20 +42,11 @@ void SchemaSettings::print_settings_values()
 	std::cout<<std::endl;
 }
 
-/**
- *
- * @param is
- */
 void SchemaSettings::set_id_schema(const std::string &is)
 {
 	id_schema = is;
 }
 
-/**
- *
- * @param key
- * @param value
- */
 void SchemaSettings::set_value(const std::string &key, const std::string &value)
 {
 	def_check_insert check;
@@ -101,11 +59,6 @@ void SchemaSettings::set_value(const std::string &key, const std::string &value)
 	}
 }
 
-/**
- *
- * @param key
- * @param value
- */
 void SchemaSettings::set_value(const std::string &key, const std::vector<std::string> &value)
 {
 	int num_elem;
@@ -127,11 +80,6 @@ void SchemaSettings::set_value(const std::string &key, const std::vector<std::st
 	}
 }
 
-/**
- *
- * @param key
- * @param value
- */
 void SchemaSettings::set_value(const std::string &key, std::map<std::string, std::string> value)
 {
 	VariableMap * new_map = new VariableMap;
@@ -152,11 +100,6 @@ void SchemaSettings::set_value(const std::string &key, std::map<std::string, std
 	}
 }
 
-/**
- *
- * @param ss
- * @return
- */
 SchemaSettings & SchemaSettings::operator=(const SchemaSettings &ss)
 {
 	this->settings_table = ss.settings_table;
@@ -165,28 +108,18 @@ SchemaSettings & SchemaSettings::operator=(const SchemaSettings &ss)
 	return *this;
 }
 
-/**
- *
- * @param key
- * @return
- */
 VariableBase & SchemaSettings::operator[](const std::string &key)
 {
 	return *settings_table[key];
 }
 
-/**
- *
- * @param value
- * @return
- */
 VariableBase * SchemaSettings::analize_type_data(const std::string &value)
 {
 	VariableBase * new_var;
 
 	try
 	{
-		double val = boost::lexical_cast<double>(value);
+		double val = std::stod(value);
 
 		size_t found_double = value.find_first_of(".");
 
@@ -198,7 +131,7 @@ VariableBase * SchemaSettings::analize_type_data(const std::string &value)
 		}
 		else
 		{
-			int val_int = boost::lexical_cast<int>(value);
+			int val_int = std::stoi(value);
 
 			new_var = new VariableInt;
 
@@ -219,16 +152,11 @@ VariableBase * SchemaSettings::analize_type_data(const std::string &value)
 	return new_var;
 }
 
-/**
- *
- * @param vec_aux
- * @param value
- */
 void SchemaSettings::set_data_vector(VariableVector &vec_aux, const std::string &value)
 {
 	try
 	{
-		double val = boost::lexical_cast<double>(value);
+		double val = std::stod(value);
 
 		size_t found_double = value.find_first_of(".");
 
@@ -238,7 +166,7 @@ void SchemaSettings::set_data_vector(VariableVector &vec_aux, const std::string 
 		}
 		else
 		{
-			int val_int = boost::lexical_cast<int>(value);
+			int val_int = std::stoi(value);
 
 			vec_aux.set_value(val_int);
 		}
@@ -253,16 +181,11 @@ void SchemaSettings::set_data_vector(VariableVector &vec_aux, const std::string 
 	}
 }
 
-/**
- *
- * @param map_aux
- * @param value
- */
 void SchemaSettings::set_data_map(VariableMap &map_aux, const std::string &key, const std::string &value)
 {
 	try
 	{
-		double val = boost::lexical_cast<double>(value);
+		double val = std::stod(value);
 
 		size_t found_double = value.find_first_of(".");
 
@@ -272,7 +195,7 @@ void SchemaSettings::set_data_map(VariableMap &map_aux, const std::string &key, 
 		}
 		else
 		{
-			int val_int = boost::lexical_cast<int>(value);
+			int val_int = std::stoi(value);
 
 			map_aux.set_value(key, val_int);
 		}

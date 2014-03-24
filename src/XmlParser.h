@@ -1,8 +1,11 @@
+#ifndef XMLPARSER_H_
+#define XMLPARSER_H_
+
 /**
- *  XmlParse.h
+ *  @file
  *  This file is part of libSettings
  *
- *  Copyright (C) 2013  Jose Manuel Pintor Freire
+ *  Copyright (C) 2014  Jose Manuel Pintor Freire
  *
  *  libSettings is free software: you can redistribute it and/or
  *  modify it under the terms of the GNU Lesser General Public
@@ -18,12 +21,9 @@
  *  along with libSettings.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef XMLPARSER_H_
-#define XMLPARSER_H_
-
 #include <iostream>
 #include <libxml++/libxml++.h>
-#include <glibmm/convert.h>
+#include <glibmm.h>
 #include <cstdlib>
 #include <stack>
 #include <map>
@@ -31,6 +31,10 @@
 #include "SchemaSettings.h"
 #include "Log.h"
 
+/**
+ *  \addtogroup appSet
+ *  @{
+ */
 namespace appSet
 {
 	class XmlParser: public xmlpp::SaxParser
@@ -50,5 +54,5 @@ namespace appSet
 			std::string id_aux;
 			std::vector<std::string> v_aux;
 	};
-} /* namespace appSet */
+} /*! @}*/
 #endif /* XMLPARSER_H_ */

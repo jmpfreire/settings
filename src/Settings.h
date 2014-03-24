@@ -1,8 +1,11 @@
+#ifndef SETTINGS_H_
+#define SETTINGS_H_
+
 /**
- *  Settings.h
+ *  @file
  *  This file is part of libSettings
  *
- *  Copyright (C) 2013  Jose Manuel Pintor Freire
+ *  Copyright (C) 2014  Jose Manuel Pintor Freire
  *
  *  libSettings is free software: you can redistribute it and/or
  *  modify it under the terms of the GNU Lesser General Public
@@ -18,9 +21,6 @@
  *  along with libSettings.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef SETTINGS_H_
-#define SETTINGS_H_
-
 #include <string>
 #include <map>
 
@@ -30,6 +30,10 @@
 #include "Log.h"
 #include "Utils.h"
 
+/**
+ *  \addtogroup appSet
+ *  @{
+ */
 namespace appSet
 {
 	class Settings
@@ -50,5 +54,5 @@ namespace appSet
 			std::string pref_file_path;
 			SchemaSettings schema;
 	};
-} /* namespace appSet */
+} /*! @}*/
 #endif /* SETTINGS_H_ */

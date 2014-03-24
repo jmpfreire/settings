@@ -1,8 +1,11 @@
+#ifndef VARIABLEMAP_H_
+#define VARIABLEMAP_H_
+
 /**
- *  VariableMap.h
+ *  @file
  *  This file is part of libSettings
  *
- *  Copyright (C) 2013  Jose Manuel Pintor Freire
+ *  Copyright (C) 2014  Jose Manuel Pintor Freire
  *
  *  libSettings is free software: you can redistribute it and/or
  *  modify it under the terms of the GNU Lesser General Public
@@ -18,15 +21,16 @@
  *  along with libSettings.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef VARIABLEMAP_H_
-#define VARIABLEMAP_H_
-
 #include "../VariableBase.h"
 
 #include "VariableInt.h"
 #include "VariableDouble.h"
 #include "VariableString.h"
 
+/**
+ *  \addtogroup appSet
+ *  @{
+ */
 namespace appSet
 {
 	class VariableMap: public appSet::VariableBase
@@ -51,5 +55,5 @@ namespace appSet
 		private:
 			std::map<std::string, VariableBase *> value;
 	};
-} /* namespace appSet */
+} /*! @}*/
 #endif /* VARIABLEMAP_H_ */
